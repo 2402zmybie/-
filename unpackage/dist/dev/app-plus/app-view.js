@@ -228,7 +228,7 @@ var render = function() {
     [
       _c("v-uni-text", { attrs: { _i: 1 } }, [
         _vm._v(
-          "flex布局的使用, 用于跨端的布局:\\n\n\t\t1: 如果不设置flex-wrap: wrap; 则所有的格子会挤在一行, 格子的宽度设置没用\\n\n\t\t2: 设置flex-wrap: wrap; 则自动换行; flex-wrap: wrap-reverse,则反向换行\\n\n\t\t3: justify-content: center;子元素横向居中显示, justify-content: space-between;两端对其 justify-content: flex-end右边对其\\n\n\t\t4: align-items: center;子元素竖向居中显示\n\t\t5: 要设置盒子内的居中, 则设置"
+          "flex布局的使用, 用于跨端的布局:\\n\n\t\t1: 如果不设置flex-wrap: wrap; 则所有的格子会挤在一行, 格子的宽度设置没用(不会撑大盒子, 这是flex布局的好处)\\n\n\t\t2: 设置flex-wrap: wrap; 则自动换行; flex-wrap: wrap-reverse,则反向换行\\n\n\t\t3: justify-content: center;子元素主轴居中显示, justify-content: space-between;两端对其 justify-content: flex-end右边对其\\n\n\t\t4: align-items: center;子元素竖轴居中显示\n\t\t5: 要设置盒子内的居中, 则设置 display: flex;justify-content: center;align-items: center;\n\t\t6: 设置元素的显示方向: flex-direction: column;\n\t\t7: flex-shrink:0;设置在子元素上, 子元素不能被压缩\n\t\t8: align-self: flex-end;"
         )
       ]),
       _c(
@@ -248,6 +248,44 @@ var render = function() {
           _c(
             "v-uni-view",
             { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
+            [_vm._v("3")]
+          ),
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
+            [_vm._v("4")]
+          ),
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
+            [_vm._v("5")]
+          ),
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
+            [_vm._v("6")]
+          )
+        ],
+        1
+      ),
+      _c("v-uni-text", { attrs: { _i: 9 } }, [_vm._v("8: flex等分布局")]),
+      _c(
+        "v-uni-view",
+        { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+        [
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
+            [_vm._v("1")]
+          ),
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
+            [_vm._v("2")]
+          ),
+          _c(
+            "v-uni-view",
+            { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
             [_vm._v("3")]
           )
         ],
@@ -345,7 +383,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ./node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.box[data-v-45872e1e] {\r\n\twidth: 100%;\r\n\tborder: 1upx solid #CCCCCC;\r\n\theight: 500upx;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -webkit-flex;\r\n\tdisplay: flex;\r\n\t-webkit-box-pack: end;\r\n\t-webkit-justify-content: flex-end;\r\n\t        justify-content: flex-end;\r\n\t-webkit-box-align: center;\r\n\t-webkit-align-items: center;\r\n\t        align-items: center;\n}\n.box-item[data-v-45872e1e] {\r\n\tbackground: #007AFF;\r\n\tcolor: #FFFFFF;\r\n\theight: 200upx;\r\n\twidth: 200upx;\r\n\tline-height: 200upx;\r\n\tfont-size: 30upx;\r\n\tfont-weight: bold;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -webkit-flex;\r\n\tdisplay: flex;\r\n\t-webkit-box-pack: center;\r\n\t-webkit-justify-content: center;\r\n\t        justify-content: center;\r\n\t-webkit-box-align: center;\r\n\t-webkit-align-items: center;\r\n\t        align-items: center;\n}\r\n/* css3选择器 */\n.box-item[data-v-45872e1e]:nth-of-type(odd){\r\n\tbackground: red;\n}\n.box-item[data-v-45872e1e]:nth-of-type(even) {\r\n\tbackground: yellow;\n}\r\n", ""]);
+exports.push([module.i, "\n.box[data-v-45872e1e] {\r\n\twidth: 100%;\r\n\tborder: 1upx solid #CCCCCC;\r\n\theight: 500upx;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -webkit-flex;\r\n\tdisplay: flex;\r\n\t/* justify-content: flex-end;\r\n\talign-items: center; */\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t-webkit-flex-direction: row;\r\n\t        flex-direction: row;\n}\n.box-item[data-v-45872e1e] {\r\n\tbackground: #007AFF;\r\n\tcolor: #FFFFFF;\r\n\theight: 200upx;\r\n\twidth: 200upx;\r\n\tline-height: 200upx;\r\n\tfont-size: 30upx;\r\n\tfont-weight: bold;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -webkit-flex;\r\n\tdisplay: flex;\r\n\t-webkit-box-pack: center;\r\n\t-webkit-justify-content: center;\r\n\t        justify-content: center;\r\n\t-webkit-box-align: center;\r\n\t-webkit-align-items: center;\r\n\t        align-items: center;\n}\r\n/* css3选择器 */\n.box-item[data-v-45872e1e]:nth-of-type(odd){\r\n\tbackground: red;\n}\n.box-item[data-v-45872e1e]:nth-of-type(even) {\r\n\tbackground: yellow;\n}\n.box-item[data-v-45872e1e]:nth-of-type(1) {\r\n\t-webkit-flex-shrink:0;\r\n\t        flex-shrink:0;\n}\n.box2[data-v-45872e1e] {\r\n\twidth: 100%;\r\n\theight: 200upx;\r\n\tborder: 1px solid #007AFF;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -webkit-flex;\r\n\tdisplay: flex;\r\n\tbackground: red;\r\n\tcolor: #FFFFFF;\n}\n.box2-item[data-v-45872e1e] {\r\n\t/* display: flex;\r\n\tjustify-content: center;\r\n\talign-items: center; */\n}\n.box2-item[data-v-45872e1e]:nth-of-type(1) {\r\n\t-webkit-box-flex: 1;\r\n\t-webkit-flex: 1;\r\n\t        flex: 1;\n}\n.box2-item[data-v-45872e1e]:nth-of-type(2) {\r\n\t-webkit-box-flex: 2;\r\n\t-webkit-flex: 2;\r\n\t        flex: 2;\n}\n.box2-item[data-v-45872e1e]:nth-of-type(3) {\r\n\t-webkit-box-flex: 1;\r\n\t-webkit-flex: 1;\r\n\t        flex: 1;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
