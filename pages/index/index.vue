@@ -12,6 +12,12 @@
 			<view class="index-list2">我是标题</view>
 			<view class="index-list3">
 				<image src="../../static/demo/datapic/11.jpg" mode="widthFix" lazy-load></image>
+				<!-- 视频播放按钮 -->
+				<view class="icon iconfont icon-bofang index-list-play"></view>
+				<!-- 右下角视频播放信息 -->
+				<view class="index-list-playinfo">
+					20w次播放 2:47
+				</view>
 			</view>
 			<view class="index-list4">
 				<!-- 左边顶和踩 -->
@@ -87,9 +93,28 @@
 	font-size: 30upx;
 }
 .index-list3 {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	image {
 		width: 100%;
 		border-radius: 10upx;
+	}
+	.index-list-play {
+		position: absolute;
+		font-size: 140upx;
+		color: #FFFFFF;
+	}
+	.index-list-playinfo {
+		position: absolute;
+		background: rgba(51,51,51,0.72);
+		color: #FFFFFF;
+		font-size: 22upx;
+		right: 8upx;
+		bottom: 8upx;
+		padding: 0 10upx;
+		border-radius: 40upx;
 	}
 }
 .index-list4 {

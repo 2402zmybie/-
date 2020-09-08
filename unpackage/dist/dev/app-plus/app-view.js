@@ -283,30 +283,27 @@ var render = function() {
                   "lazy-load": true,
                   _i: 9
                 }
-              })
+              }),
+              _c("v-uni-view", {
+                staticClass: _vm._$g(10, "sc"),
+                attrs: { _i: 10 }
+              }),
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
+                [_vm._v("20w次播放 2:47")]
+              )
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+            { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
+                { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
                 [
-                  _c(
-                    "v-uni-view",
-                    { attrs: { _i: 12 } },
-                    [
-                      _c("v-uni-view", {
-                        staticClass: _vm._$g(13, "sc"),
-                        attrs: { _i: 13 }
-                      }),
-                      _vm._v("10")
-                    ],
-                    1
-                  ),
                   _c(
                     "v-uni-view",
                     { attrs: { _i: 14 } },
@@ -314,6 +311,18 @@ var render = function() {
                       _c("v-uni-view", {
                         staticClass: _vm._$g(15, "sc"),
                         attrs: { _i: 15 }
+                      }),
+                      _vm._v("10")
+                    ],
+                    1
+                  ),
+                  _c(
+                    "v-uni-view",
+                    { attrs: { _i: 16 } },
+                    [
+                      _c("v-uni-view", {
+                        staticClass: _vm._$g(17, "sc"),
+                        attrs: { _i: 17 }
                       }),
                       _vm._v("5")
                     ],
@@ -324,20 +333,8 @@ var render = function() {
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
+                { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
                 [
-                  _c(
-                    "v-uni-view",
-                    { attrs: { _i: 17 } },
-                    [
-                      _c("v-uni-view", {
-                        staticClass: _vm._$g(18, "sc"),
-                        attrs: { _i: 18 }
-                      }),
-                      _vm._v("40")
-                    ],
-                    1
-                  ),
                   _c(
                     "v-uni-view",
                     { attrs: { _i: 19 } },
@@ -345,6 +342,18 @@ var render = function() {
                       _c("v-uni-view", {
                         staticClass: _vm._$g(20, "sc"),
                         attrs: { _i: 20 }
+                      }),
+                      _vm._v("40")
+                    ],
+                    1
+                  ),
+                  _c(
+                    "v-uni-view",
+                    { attrs: { _i: 21 } },
+                    [
+                      _c("v-uni-view", {
+                        staticClass: _vm._$g(22, "sc"),
+                        attrs: { _i: 22 }
                       }),
                       _vm._v("50")
                     ],
@@ -2049,7 +2058,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ./node_modules/css-loader/dist/runtime/api.js */ 31);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.index-list[data-v-2be84a3c] {\r\n  padding: 20upx;\r\n  border-bottom: 1px solid #BEBEBE;\n}\n.index-list1[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n  -webkit-justify-content: space-between;\r\n          justify-content: space-between;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\n}\n.index-list1 .index-list1-left[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\n}\n.index-list1 .index-list1-left uni-image[data-v-2be84a3c] {\r\n  width: 90upx;\r\n  height: 90upx;\r\n  margin-right: 16upx;\r\n  border-radius: 50%;\n}\n.index-list1 .index-list1-right[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  background: #EEEEEE;\r\n  padding: 0 10upx;\n}\n.index-list2[data-v-2be84a3c] {\r\n  margin: 20upx 0;\r\n  color: #000000;\r\n  font-size: 30upx;\n}\n.index-list3 uni-image[data-v-2be84a3c] {\r\n  width: 100%;\r\n  border-radius: 10upx;\n}\n.index-list4[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n  -webkit-justify-content: space-between;\r\n          justify-content: space-between;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  color: #BEBEBE;\n}\n.index-list4 .index-list4-image[data-v-2be84a3c] {\r\n  margin-right: 8upx;\n}\n.index-list4 .index-list4-left[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\n}\n.index-list4 .index-list4-left uni-view[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\n}\n.index-list4 .index-list4-left uni-view[data-v-2be84a3c] :last-child {\r\n  margin-left: 10upx;\n}\n.index-list4 .index-list4-right[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\n}\n.index-list4 .index-list4-right uni-view[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\n}\n.index-list4 .index-list4-right uni-view[data-v-2be84a3c] :last-child {\r\n  margin-left: 10upx;\n}\r\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.index-list[data-v-2be84a3c] {\r\n  padding: 20upx;\r\n  border-bottom: 1px solid #BEBEBE;\n}\n.index-list1[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n  -webkit-justify-content: space-between;\r\n          justify-content: space-between;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\n}\n.index-list1 .index-list1-left[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\n}\n.index-list1 .index-list1-left uni-image[data-v-2be84a3c] {\r\n  width: 90upx;\r\n  height: 90upx;\r\n  margin-right: 16upx;\r\n  border-radius: 50%;\n}\n.index-list1 .index-list1-right[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  background: #EEEEEE;\r\n  padding: 0 10upx;\n}\n.index-list2[data-v-2be84a3c] {\r\n  margin: 20upx 0;\r\n  color: #000000;\r\n  font-size: 30upx;\n}\n.index-list3[data-v-2be84a3c] {\r\n  position: relative;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n  -webkit-justify-content: center;\r\n          justify-content: center;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\n}\n.index-list3 uni-image[data-v-2be84a3c] {\r\n  width: 100%;\r\n  border-radius: 10upx;\n}\n.index-list3 .index-list-play[data-v-2be84a3c] {\r\n  position: absolute;\r\n  font-size: 140upx;\r\n  color: #FFFFFF;\n}\n.index-list3 .index-list-playinfo[data-v-2be84a3c] {\r\n  position: absolute;\r\n  background: rgba(51, 51, 51, 0.72);\r\n  color: #FFFFFF;\r\n  font-size: 22upx;\r\n  right: 8upx;\r\n  bottom: 8upx;\r\n  padding: 0 10upx;\r\n  border-radius: 40upx;\n}\n.index-list4[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n  -webkit-justify-content: space-between;\r\n          justify-content: space-between;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  color: #BEBEBE;\n}\n.index-list4 .index-list4-image[data-v-2be84a3c] {\r\n  margin-right: 8upx;\n}\n.index-list4 .index-list4-left[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\n}\n.index-list4 .index-list4-left uni-view[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\n}\n.index-list4 .index-list4-left uni-view[data-v-2be84a3c] :last-child {\r\n  margin-left: 10upx;\n}\n.index-list4 .index-list4-right[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\n}\n.index-list4 .index-list4-right uni-view[data-v-2be84a3c] {\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\n}\n.index-list4 .index-list4-right uni-view[data-v-2be84a3c] :last-child {\r\n  margin-left: 10upx;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
