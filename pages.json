@@ -1,12 +1,46 @@
 {
 	"pages": [
 		{
-			"path":"pages/demo-flex/demo-flex"
-		},
-		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "糗事"
+				// "navigationBarTitleText": "糗事",
+				//自定义搜索顶部导航条
+				// 配置编译到 App 平台时的特定样式，部分常用配置 H5 平台也支持
+				"app-plus": {
+					// 隐藏滚动条
+					"scrollIndicator":"none",
+					"titleNView": {
+						"searchInput": {
+							"align":"center",
+							"backgroundColor":"#F7F7F7",
+							"borderRadius":"4px",
+							"placeholder":"搜索糗事",
+							"placeholderColor":"#CCCCCC",
+							"disabled":true
+						},
+						// 配置按钮
+						"buttons":[
+							// 左边
+							{
+								"color":"#FF9619",
+								"colorPressed":"#BBBBBB",
+								"float":"left",
+								"fontSize":"22px",
+								"fontSrc":"/static/font/icon.ttf",
+								"text":"\ue609"
+							},
+							//右边
+							{
+								"color":"#000000",
+								"colorPressed":"#BBBBBB",
+								"float":"right",
+								"fontSize":"22px",
+								"fontSrc":"/static/font/icon.ttf",
+								"text":"\ue653"
+							}
+						]
+					}
+				}
 			}
 		},
 		{
@@ -26,6 +60,19 @@
 			"style": {
 				"navigationBarTitleText":"我的"
 			}
+		},
+		
+		
+		
+		// demo示例
+		{
+			"path":"pages/demo-flex/demo-computed"
+		},
+		{
+			"path":"pages/demo-flex/demo-watch"
+		},
+		{
+			"path":"pages/demo-flex/demo-flex"
 		}
 	],
 	"globalStyle": {
