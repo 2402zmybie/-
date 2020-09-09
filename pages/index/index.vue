@@ -296,6 +296,16 @@
 				
 			})
 		},
+		//监听原生标题导航按钮点击事件. 参数为Object, 要转化为String
+		onNavigationBarButtonTap(e) {
+			if(e.index == 1) {
+				//点击分享按钮(第二个按钮)
+				uni.navigateTo({
+					url: '../add-input/add-input',
+				});
+			}
+			
+		},
 		methods: {
 			//上拉加载
 			loadmore(index) {

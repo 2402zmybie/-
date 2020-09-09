@@ -108,6 +108,15 @@
             	}
             }
         }
+        ,{
+            "path" : "pages/add-input/add-input",
+            "style" : {
+				"app-plus": {
+					//禁用原生导航
+					"titleNView":false
+				}
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
