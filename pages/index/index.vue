@@ -5,10 +5,13 @@
 		<view class="uni-tab-bar">
 			<swiper class="swiper-box" :style="{height: swiperheight + 'px'}" :current="tabIndex" @change="tabChange">
 				<swiper-item v-for="(items,index) in newslist" :key="index">
-					<scroll-view scroll-y="true" class="list">
+					<scroll-view scroll-y="true" class="list" @scrolltolower="loadmore(index)">
+						<!-- 图文列表 -->
 						<block v-for="(item,index1) in items.list" :key="index1">
 							<indexList :item="item" :index="index"></indexList>
 						</block>
+						<!-- 上拉加载更多 -->
+						<load-more :loadtext="items.loadtext"></load-more>
 					</scroll-view>
 				</swiper-item>
 			</swiper>
@@ -20,10 +23,12 @@
 <script>
 	import swiperTabHead from '../../components/index/swiper-tab-head.vue'
 	import indexList from '../../components/index/index-list.vue';
+	import loadMore from '../../components/common/load-more.vue'
 	export default {
 		components:{
 			indexList,
-			swiperTabHead
+			swiperTabHead,
+			loadMore
 		},
 		data() {
 			return {
@@ -277,6 +282,35 @@
 			})
 		},
 		methods: {
+			//上拉加载
+			loadmore(index) {
+				if(this.newslist[index].loadtext != "上拉加载更多") {
+					return;
+				}
+				//修改状态
+				this.newslist[index].loadtext = "加载中..."
+				//获取数据
+				setTimeout(() => {
+					//获取完成
+					let obj = {
+						userpic:"/static/demo/userpic/20.jpg",
+						username:"张三",
+						isguanzhu:false,
+						title:"模拟数据",
+						type:"img", // img:图文,video:视频
+						titlepic:"/static/demo/datapic/30.jpg",
+						infonum:{
+							index:0,//0:没有操作，1:顶,2:踩；
+							dingnum:11,
+							cainum:11,
+						},
+						commentnum:10,
+						sharenum:10,
+					};
+					this.newslist[index].list.push(obj);
+					this.newslist[index].loadtext = "上拉加载更多";
+				},1000)
+			},
 			tabtap(index) {
 				this.tabIndex = index
 			},
@@ -289,7 +323,11 @@
 </script>
 
 <style lang="scss">
-
+.load-more {
+	text-align: center;
+	color: #AAAAAA;
+	padding: 10upx;
+}
 
 
 </style>
