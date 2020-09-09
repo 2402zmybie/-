@@ -289,6 +289,13 @@
 				}
 			})
 		},
+		//监听搜索框点击事件
+		onNavigationBarSearchInputClicked() {
+			uni.navigateTo({
+				url:'../search/search',
+				
+			})
+		},
 		methods: {
 			//上拉加载
 			loadmore(index) {

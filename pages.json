@@ -73,8 +73,42 @@
 		},
 		{
 			"path":"pages/demo-flex/demo-flex"
-		}
-	],
+		},
+	    {
+            "path" : "pages/search/search",
+            "style": {
+            	// "navigationBarTitleText": "糗事",
+            	//自定义搜索顶部导航条
+            	// 配置编译到 App 平台时的特定样式，部分常用配置 H5 平台也支持
+            	"app-plus": {
+            		// 隐藏滚动条
+            		"scrollIndicator":"none",
+            		"titleNView": {
+						"autoBackButton":false,
+            			"searchInput": {
+            				"align":"left",
+            				"backgroundColor":"#F7F7F7",
+            				"borderRadius":"4px",
+            				"placeholder":"搜索",
+            				"placeholderColor":"#CCCCCC",
+            				"disabled":false
+            			},
+            			// 配置按钮
+            			"buttons":[
+            				//右边
+            				{
+            					"color":"#000000",
+            					"colorPressed":"#BBBBBB",
+            					"float":"right",
+            					"fontSize":"16px",
+            					"text":"取消"
+            				}
+            			]
+            		}
+            	}
+            }
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "老何糗百",
