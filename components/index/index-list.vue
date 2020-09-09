@@ -1,15 +1,15 @@
 <template>
-	<view class="index-list">
+	<view class="index-list animated fadeInLeft fast">
 		<view class="index-list1">
 			<view class="index-list1-left">
 				<image :src="item.userpic" mode="widthFix" lazy-load></image>{{ item.username }}
 			</view>
-			<view class="index-list1-right" v-show="item.isguanzhu">
+			<view class="index-list1-right" v-show="!item.isguanzhu" @tap="guanzhu">
 				<view class="icon iconfont icon-zengjia"></view>关注
 			</view>
 		</view>
-		<view class="index-list2">{{ item.title }}</view>
-		<view class="index-list3" >
+		<view class="index-list2" @tap="opendetail">{{ item.title }}</view>
+		<view class="index-list3" @tap="opendetail">
 			<image :src="item.titlepic" mode="widthFix" lazy-load></image>
 			<template v-if="item.type === 'video'">
 				<!-- 视频播放按钮 -->
@@ -23,10 +23,10 @@
 		<view class="index-list4">
 			<!-- 左边顶和踩 -->
 			<view class="index-list4-left">
-				<view :class="{'active': (item.infonum.index == 1)}">
+				<view :class="{'active': (item.infonum.index == 1)}" @tap="caozuo('ding')">
 					<view class="icon iconfont icon-icon_xiaolian-mian index-list4-image"></view>{{ item.infonum.dingnum }}
 				</view>
-				<view :class="{'active': (item.infonum.index == 2)}">
+				<view :class="{'active': (item.infonum.index == 2)}" @tap="caozuo('cai')">
 					<view class="icon iconfont icon-kulian index-list4-image"></view>{{ item.infonum.cainum }}
 				</view>
 			</view>
@@ -50,6 +50,52 @@
 			return {
 				
 			};
+		},
+		methods:{
+			//点击关注
+			guanzhu() {
+				this.item.isguanzhu = true
+				uni.showToast({
+					title: '关注成功'
+				});
+			},
+			//顶 踩的操作
+			caozuo(type) {
+				// infonum:{
+				// 	index:0,//0:没有操作，1:顶,2:踩；
+				// 	dingnum:11,
+				// 	cainum:11,
+				// }
+				switch (type){
+					case "ding": {
+							if(this.item.infonum.index == 1) {
+								return;
+							}
+							this.item.infonum.dingnum++;
+							if(this.item.infonum.index == 2) {
+								this.item.infonum.cainum--;
+							}
+							this.item.infonum.index = 1	
+						}
+						break;
+					case "cai": {
+							if(this.item.infonum.index == 2) {
+								return;
+							}
+							this.item.infonum.cainum++;
+							if(this.item.infonum.index == 1) {
+								this.item.infonum.dingnum--;
+							}
+							this.item.infonum.index = 2	
+						}	
+						break;
+					
+				}
+			},
+			//点击标题和图片跳转, 进入详情页
+			opendetail() {
+				console.log("跳转详情页")
+			}
 		}
 	}
 </script>
@@ -117,9 +163,7 @@
 	justify-content: space-between;
 	align-items: center;
 	color: #BEBEBE;
-	.active {
-		color: #FFFF00;
-	}
+	
 	.index-list4-image {
 		margin-right: 8upx;
 	}
@@ -131,6 +175,9 @@
 			:last-child{
 				margin-left: 10upx;
 			}
+		}
+		.active {
+			color: #FFFF00;
 		}
 		
 	}

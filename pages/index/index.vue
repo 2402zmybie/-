@@ -6,12 +6,18 @@
 			<swiper class="swiper-box" :style="{height: swiperheight + 'px'}" :current="tabIndex" @change="tabChange">
 				<swiper-item v-for="(items,index) in newslist" :key="index">
 					<scroll-view scroll-y="true" class="list" @scrolltolower="loadmore(index)">
-						<!-- 图文列表 -->
-						<block v-for="(item,index1) in items.list" :key="index1">
-							<indexList :item="item" :index="index"></indexList>
-						</block>
-						<!-- 上拉加载更多 -->
-						<load-more :loadtext="items.loadtext"></load-more>
+						<template v-if="items.list.length > 0">
+							<!-- 图文列表 -->
+							<block v-for="(item,index1) in items.list" :key="index1">
+								<indexList :item="item" :index="index"></indexList>
+							</block>
+							<!-- 上拉加载更多 -->
+							<load-more :loadtext="items.loadtext"></load-more>
+						</template>
+						<template v-else>
+							<!-- 无内容默认 -->
+							<no-thing></no-thing>
+						</template>
 					</scroll-view>
 				</swiper-item>
 			</swiper>
@@ -24,11 +30,13 @@
 	import swiperTabHead from '../../components/index/swiper-tab-head.vue'
 	import indexList from '../../components/index/index-list.vue';
 	import loadMore from '../../components/common/load-more.vue'
+	import noThing from '../../components/common/no-thing.vue'
 	export default {
 		components:{
 			indexList,
 			swiperTabHead,
-			loadMore
+			loadMore,
+			noThing
 		},
 		data() {
 			return {
@@ -221,7 +229,7 @@
 					{
 						loadtext:"上拉加载更多",
 						list:[
-							{
+							/* {
 								userpic:"/static/demo/userpic/1.jpg",
 								username:"昵称",
 								isguanzhu:true,
@@ -237,7 +245,7 @@
 								},
 								commentnum:10,
 								sharenum:10,
-							}
+							} */
 						]
 					},
 					{
@@ -323,11 +331,5 @@
 </script>
 
 <style lang="scss">
-.load-more {
-	text-align: center;
-	color: #AAAAAA;
-	padding: 10upx;
-}
-
 
 </style>

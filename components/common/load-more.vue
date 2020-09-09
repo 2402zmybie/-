@@ -12,4 +12,9 @@
 </script>
 
 <style>
+.load-more {
+	text-align: center;
+	color: #AAAAAA;
+	padding: 10upx;
+}
 </style>
