@@ -7,22 +7,36 @@
 				<view class="icon iconfont icon-xialazhankai"></view>
 			</view>
 		</uni-nav-bar>
+		<!-- 多行输入框 -->
+		<view class="uni-textarea">
+			<textarea placeholder="说一句话吧" v-model="text"></textarea>
+		</view>
+		<!-- 上传多图 -->
+		<upload-images @uploadImage="uploadImage"></upload-images>
 	</view>
 </template>
 
 <script>
 	import uniNavBar from "../../components/uni-nav-bar/uni-nav-bar";
+	import uploadImages from '../../components/common/upload-images.vue'
 	let changelook = ['所有人可见', '仅自己可见'];
 	export default {
 		components: {
-			uniNavBar
+			uniNavBar,
+			uploadImages
 		},
 		data() {
 			return {
-				yinsi: "所有人可见"
+				yinsi: "所有人可见",
+				text: '',
+				imageList:[]
 			}
 		},
 		methods: {
+			uploadImage(imageList) {
+				this.imageList = imageList;
+				console.log(this.imageList)
+			},
 			back() {
 				console.log(111)
 				uni.navigateBack({
@@ -50,4 +64,19 @@
 	justify-content: center;
 	align-items: center;
 }
+
+.uni-textarea {
+	border: 1px solid #EEEEEE;
+}
+
+.cell-pd {
+	padding: 22rpx 30rpx;
+}
+
+.list-pd {
+	margin-top: 50rpx;
+}
+
+
+
 </style>

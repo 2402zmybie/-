@@ -1,2 +1,0 @@
-<view><text>需求: 如果体重大于1000则显示...kg, 否则显示...g\n
-		 计算属性:\n</text><text class="tx">{{'体重: '+transferWeight+''}}</text><button type="primary" data-event-opts="{{[['tap',[['addWeight',['$event']]]]]}}" bindtap="__e">增加体重</button></view>

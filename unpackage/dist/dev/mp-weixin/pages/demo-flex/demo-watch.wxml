@@ -1,1 +1,0 @@
-<view>监听属性: 在封装组件中使用较多,监听某一个属性,通知父组件改变<view class="font">{{''+num}}</view><block wx:if="{{num>10}}"><view>优秀</view></block><button type="primary" data-event-opts="{{[['tap',[['change',['$event']]]]]}}" bindtap="__e">修改</button></view>
