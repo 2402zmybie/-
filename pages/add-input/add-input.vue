@@ -13,26 +13,42 @@
 		</view>
 		<!-- 上传多图 -->
 		<upload-images @uploadImage="uploadImage"></upload-images>
+		<!-- 弹出公告 -->
+		<uni-popup id="popup" ref="popup" :type="type" :animation="false" @change="change">
+			<view class="popup-content">popup 内容，此示例没有动画效果</view>
+		</uni-popup>
 	</view>
 </template>
 
 <script>
 	import uniNavBar from "../../components/uni-nav-bar/uni-nav-bar";
 	import uploadImages from '../../components/common/upload-images.vue'
+	//弹出层
+	import {uniPopup} from '@dcloudio/uni-ui'
 	let changelook = ['所有人可见', '仅自己可见'];
 	export default {
 		components: {
 			uniNavBar,
-			uploadImages
+			uploadImages,
+			
 		},
 		data() {
 			return {
 				yinsi: "所有人可见",
 				text: '',
-				imageList:[]
+				imageList:[],
+				
+				type: 'center',
+				msgType: 'success',
+				message: '这是一条成功消息提示',
+				value: '默认输入的内容'
 			}
 		},
 		methods: {
+			//弹出层改变事件
+			change() {
+				
+			},
 			uploadImage(imageList) {
 				this.imageList = imageList;
 				console.log(this.imageList)
