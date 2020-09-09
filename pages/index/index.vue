@@ -1,38 +1,29 @@
 <template>
-	<view class="content">
+	<view>
+		<swiper-tab-head :tabBars = "tabBars" :tabIndex = "tabIndex" @tabtap="tabtap"></swiper-tab-head>
+	
 		<view class="uni-tab-bar">
-			<scroll-view class="uni-swiper-tab" scroll-x>
-				<block v-for="(tab,index) in tabBars" :key="tab.id" :style="scrollStyle">
-					<view 
-						class="swiper-tab-list" 
-						:class="{'active' : tabIndex==index}"
-						@tap="tabtap(index)">
-						{{tab.name}} {{tab.num?tab.num:""}}
-						<view class="swiper-tab-line" ></view>
-					</view>
-				</block>
-			</scroll-view>
-			
+			<swiper class="swiper-box" :style="{height: swiperheight + 'px'}" :current="tabIndex" @change="tabChange">
+				<swiper-item v-for="(items,index) in newslist" :key="index">
+					<scroll-view scroll-y="true" class="list">
+						<block v-for="(item,index1) in items.list" :key="index1">
+							<indexList :item="item" :index="index"></indexList>
+						</block>
+					</scroll-view>
+				</swiper-item>
+			</swiper>
 		</view>
-		
-		<swiper class="swiper-box">
-			<swiper-item v-for="(items,index) in newslist" :key="index">
-				<scroll-view scroll-y="true" class="list">
-					<block v-for="(item,index1) in items.list" :key="index1">
-						<indexList :item="item" :index="index"></indexList>
-					</block>
-				</scroll-view>
-			</swiper-item>
-		</swiper>
 	
 	</view>
 </template>
 
 <script>
+	import swiperTabHead from '../../components/index/swiper-tab-head.vue'
 	import indexList from '../../components/index/index-list.vue';
 	export default {
 		components:{
-			indexList
+			indexList,
+			swiperTabHead
 		},
 		data() {
 			return {
@@ -275,33 +266,30 @@
 			}
 		},
 		onLoad() {
-
+			//获取可用窗口的高度
+			uni.getSystemInfo({
+				success: (res) => {
+					//获取下方滑动的ListView容器的高度
+					let height = res.windowHeight - uni.upx2px(100)
+					console.log(height)
+					this.swiperheight = height
+				}
+			})
 		},
 		methods: {
 			tabtap(index) {
 				this.tabIndex = index
+			},
+			//ListView swiper切换
+			tabChange(e) {
+				this.tabIndex = e.detail.current
 			}
 		}
 	}
 </script>
 
 <style lang="scss">
-.uni-swiper-tab {
-	border-bottom: 1upx solid #EEEEEE;
-	.active {
-		color: #343434;
-		.swiper-tab-line {
-			border-bottom: 6upx solid #FEDE33;
-			width: 70upx;
-			margin: auto;
-			border-top: 6upx solid #FEDE33;
-			border-radius: 20upx;
-		}
-	}
-}
-.swiper-tab-list{
-	color: #969696;
-	font-weight: bold;
-}
+
+
 
 </style>
