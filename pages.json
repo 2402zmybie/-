@@ -46,7 +46,12 @@
 		{
 			"path":"pages/news/news",
 			"style":{
-				"navigationBarTitleText":"动态"
+				"app-plus": {
+					//隐藏滚动条
+					"scrollIndicator":"none",
+					//禁用原生导航
+					"titleNView":false
+				}
 			}
 		},
 		{
