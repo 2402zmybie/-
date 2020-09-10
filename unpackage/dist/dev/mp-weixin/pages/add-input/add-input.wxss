@@ -25,6 +25,7 @@
 /* 透明度 */
 /* 文章场景相关 */
 .title-slot {
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
