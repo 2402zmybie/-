@@ -3114,27 +3114,7 @@ var render = function() {
             return _vm.$handleViewEvent($event)
           }
         }
-      }),
-      _c(
-        "uni-popup",
-        {
-          ref: "popup",
-          attrs: { id: "popup", _i: 7 },
-          on: {
-            change: function($event) {
-              return _vm.$handleViewEvent($event)
-            }
-          }
-        },
-        [
-          _c(
-            "v-uni-view",
-            { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
-            [_vm._v("popup 内容，此示例没有动画效果")]
-          )
-        ],
-        1
-      )
+      })
     ],
     1
   )

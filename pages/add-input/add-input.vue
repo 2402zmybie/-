@@ -14,9 +14,7 @@
 		<!-- 上传多图 -->
 		<upload-images @uploadImage="uploadImage"></upload-images>
 		<!-- 弹出公告 -->
-		<uni-popup id="popup" ref="popup" :type="type" :animation="false" @change="change">
-			<view class="popup-content">popup 内容，此示例没有动画效果</view>
-		</uni-popup>
+		<!-- <uni-popup ref="popupHi" type="bottom">底部弹出 Popup</uni-popup> -->
 	</view>
 </template>
 
@@ -24,30 +22,58 @@
 	import uniNavBar from "../../components/uni-nav-bar/uni-nav-bar";
 	import uploadImages from '../../components/common/upload-images.vue'
 	//弹出层
-	import {uniPopup} from '@dcloudio/uni-ui'
+	// import {uniPopup} from '@dcloudio/uni-ui'
 	let changelook = ['所有人可见', '仅自己可见'];
 	export default {
+		onBackPress() {
+			if(!this.text && this.imageList.length == 0) {
+				return;
+			}
+			if(!this.isget) {
+				this.baocun()
+				//阻止返回键
+				return true
+			}
+		},
 		components: {
 			uniNavBar,
 			uploadImages,
-			
+			// uniPopup
 		},
 		data() {
 			return {
+				isget:false,
 				yinsi: "所有人可见",
 				text: '',
 				imageList:[],
 				
-				type: 'center',
+				showpopup:true,
+				type: 'middle',
 				msgType: 'success',
 				message: '这是一条成功消息提示',
 				value: '默认输入的内容'
 			}
 		},
 		methods: {
-			//弹出层改变事件
-			change() {
-				
+			//保存为草稿
+			baocun() {
+				uni.showModal({
+					title: '是否要保存为草稿',
+					cancelText: '不保存',
+					confirmText: '保存',
+					success: res => {
+						if(res.confirm) {
+							console.log("保存")
+						}else {
+							console.log("不保存")
+						}
+						this.isget = true;
+						//返回
+						uni.navigateBack({
+							delta: 1
+						});
+					}
+				});
 			},
 			uploadImage(imageList) {
 				this.imageList = imageList;
