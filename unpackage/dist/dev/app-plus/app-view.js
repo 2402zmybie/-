@@ -2052,43 +2052,53 @@ var render = function() {
               _c("v-uni-view", { attrs: { _i: 20 } }, [_vm._v("我是标题")]),
               _c(
                 "v-uni-view",
-                { attrs: { _i: 21 } },
+                { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
                 [
-                  _c("v-uni-image", {
-                    attrs: {
-                      src: _vm._$g(22, "a-src"),
-                      mode: "widthFix",
-                      "lazy-load": true,
-                      _i: 22
-                    }
-                  })
+                  _c(
+                    "v-uni-view",
+                    { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
+                    [
+                      _c("v-uni-image", {
+                        attrs: {
+                          src: _vm._$g(23, "a-src"),
+                          mode: "widthFix",
+                          "lazy-load": true,
+                          _i: 23
+                        }
+                      }),
+                      _c("v-uni-view", { attrs: { _i: 24 } }, [
+                        _vm._v("我是标题")
+                      ])
+                    ],
+                    1
+                  )
                 ],
                 1
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
+                { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
                 [
-                  _c("v-uni-view", { attrs: { _i: 24 } }, [
+                  _c("v-uni-view", { attrs: { _i: 26 } }, [
                     _vm._v("深圳 龙岗")
                   ]),
                   _c(
                     "v-uni-view",
-                    { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
+                    { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
                     [
                       _c(
                         "v-uni-view",
-                        { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
+                        { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
                         [_vm._v("10")]
                       ),
                       _c(
                         "v-uni-view",
-                        { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
+                        { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
                         [_vm._v("20")]
                       ),
                       _c(
                         "v-uni-view",
-                        { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
+                        { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
                         [_vm._v("998")]
                       )
                     ],
@@ -2903,7 +2913,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ./node_modules/css-loader/dist/runtime/api.js */ 15);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.nav-right > uni-view, .nav-left > uni-view {\r\n  font-size: 40upx;\n}\n.nav-left > uni-view {\r\n  color: #FF9619;\n}\n.nav-left {\r\n  margin-left: 16upx;\n}\n.nav-right {\r\n  width: 100%;\n}\n.nav-tab-bar {\r\n  width: 100%;\r\n  margin-left: -20upx;\r\n  position: relative;\n}\n.nav-tab-bar > uni-view {\r\n  font-size: 35upx;\r\n  padding: 0 15upx;\r\n  font-weight: bold;\r\n  color: #969696;\n}\n.active {\r\n  color: #333333 !important;\n}\n.nav-tab-bar-line {\r\n  position: absolute;\r\n  bottom: 0upx;\r\n  border-bottom: 5upx solid #FEDE33;\r\n  border-top: 5upx solid #FEDE33;\r\n  width: 70upx;\r\n  border-radius: 20upx;\n}\n.common-list {\r\n  padding: 20upx;\n}\n.common-list-l {\r\n  -webkit-flex-shrink: 0;\r\n          flex-shrink: 0;\n}\n.common-list-l uni-image {\r\n  width: 90upx;\r\n  height: 90upx;\r\n  border-radius: 100%;\n}\n.common-list-r uni-image {\r\n  width: 100%;\r\n  border-radius: 10upx;\n}\r\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.nav-right > uni-view, .nav-left > uni-view {\r\n  font-size: 40upx;\n}\n.nav-left > uni-view {\r\n  color: #FF9619;\n}\n.nav-left {\r\n  margin-left: 16upx;\n}\n.nav-right {\r\n  width: 100%;\n}\n.nav-tab-bar {\r\n  width: 100%;\r\n  margin-left: -20upx;\r\n  position: relative;\n}\n.nav-tab-bar > uni-view {\r\n  font-size: 35upx;\r\n  padding: 0 15upx;\r\n  font-weight: bold;\r\n  color: #969696;\n}\n.active {\r\n  color: #333333 !important;\n}\n.nav-tab-bar-line {\r\n  position: absolute;\r\n  bottom: 0upx;\r\n  border-bottom: 5upx solid #FEDE33;\r\n  border-top: 5upx solid #FEDE33;\r\n  width: 70upx;\r\n  border-radius: 20upx;\n}\n.common-list {\r\n  padding: 20upx;\n}\n.common-list-l {\r\n  -webkit-flex-shrink: 0;\r\n          flex-shrink: 0;\n}\n.common-list-l uni-image {\r\n  width: 90upx;\r\n  height: 90upx;\r\n  border-radius: 100%;\n}\n.common-list-r {\r\n  -webkit-box-flex: 1;\r\n  -webkit-flex: 1;\r\n          flex: 1;\r\n  margin-left: 15upx;\r\n  border-bottom: 1upx solid #EEEEEE;\r\n  padding-bottom: 10upx;\n}\n.common-list-r > uni-view:nth-child(1) > uni-view:first-child {\r\n  color: #999999;\r\n  font-size: 32upx;\n}\n.tag-sex {\r\n  background: #007AFF;\r\n  color: #FFFFFF;\r\n  font-size: 23upx;\r\n  padding: 5upx 10upx;\r\n  margin-left: 10upx;\r\n  border-radius: 20upx;\r\n  line-height: 22upx;\n}\n.common-list-r > uni-view:nth-child(1) > uni-view:last-child {\r\n  background: #EEEEEE;\r\n  padding: 0 10upx;\r\n  font-size: 26upx;\n}\n.common-list-r > uni-view:nth-child(2) {\r\n  font-size: 32upx;\r\n  margin: 15upx 0;\n}\n.common-list-r > uni-view:nth-child(3) {\r\n  position: relative;\n}\n.common-list-r > uni-view:nth-child(3) uni-image {\r\n  width: 100%;\r\n  border-radius: 10upx;\n}\n.common-list-r > uni-view:nth-child(3) .common-list-play {\r\n  position: absolute;\r\n  color: #FFFFFF;\r\n  font-size: 130upx;\n}\n.common-list-r > uni-view:nth-child(3) .common-list-playinfo {\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 10upx;\r\n  background: rgba(51, 51, 51, 0.73);\r\n  border-radius: 20upx;\r\n  padding: 0 20upx;\r\n  color: #FFFFFF;\r\n  font-size: 26upx;\n}\n.common-list-r > uni-view:nth-child(4) > uni-view {\r\n  color: #AAAAAA;\n}\n.common-list-r > uni-view:nth-child(4) > uni-view:last-child > uni-view {\r\n  margin-left: 10upx;\r\n  padding-left: 5upx;\n}\n.common-list-share {\r\n  background: #EEEEEE;\r\n  border: 1upx solid;\r\n  width: 100%;\n}\n.common-list-share uni-image {\r\n  width: 100upx;\r\n  height: 50upx;\r\n  margin-right: 10upx;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 

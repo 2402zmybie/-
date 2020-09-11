@@ -58,7 +58,7 @@
   width: 70rpx;
   border-radius: 20rpx;
 }
-.uni-status-bar {
-  height: 0 !important;
-}
+/* .uni-status-bar{
+			height: 0!important;
+		} */
 
