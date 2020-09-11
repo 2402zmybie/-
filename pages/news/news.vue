@@ -8,17 +8,36 @@
 			<swiper class="swiper-box" :style="{height: swiperheight + 'px'}" :current="tabIndex" @change="tabChange">
 				<!-- 关注 -->
 				<swiper-item >
-					<scroll-view scroll-y="true" class="list">
+					<scroll-view scroll-y="true" class="list" @scrolltolower="loadmore()">
 						<!-- 列表 -->
 						<block v-for="(item,index) in guanzhu.list" :key="index">
 							<common-list :item="item" :index="index"></common-list>
 						</block>
+						<!-- 上拉加载 -->
+						<load-more :loadtext="guanzhu.loadtext"></load-more>
 					</scroll-view>
 				</swiper-item>
 				<!-- 话题 -->
 				<swiper-item >
 					<scroll-view scroll-y="true" class="list">
-						话题
+						<!-- 搜索框 -->
+						<view class="search-input">
+							<input placeholder="搜索内容" placeholder-class="icon iconfont icon-sousuo topic-search "/>
+						</view>
+						<!-- 轮播图 -->
+						<swiper class="topic-swiper" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
+							<swiper-item>
+								<image src="../../static/demo/banner2.jpg" mode="widthFix" lazy-load></image>
+							</swiper-item>
+							<swiper-item>
+								<image src="../../static/demo/banner2.jpg" mode="widthFix" lazy-load></image>
+							</swiper-item>
+							<swiper-item>
+								<image src="../../static/demo/banner2.jpg" mode="widthFix" lazy-load></image>
+							</swiper-item>
+						</swiper>
+						<!-- 热门分类 -->
+						<!-- 最近更新 -->
 					</scroll-view>
 				</swiper-item>
 			</swiper>
@@ -33,11 +52,13 @@
 	import newsNavBar from "../../components/news/news-nav-bar.vue"
 	//话题列表
 	import commonList from '../../components/common/common-list.vue'
+	import loadMore from '../../components/common/load-more.vue'
 	export default {
 		components:{
 			uniNavBar,
 			newsNavBar,
-			commonList
+			commonList,
+			loadMore
 		},
 		onLoad() {
 			//获取可用窗口的高度
@@ -53,7 +74,7 @@
 		data() {
 			return {
 				swiperheight:500,//屏幕高度
-				tabIndex:0,//tab索引
+				tabIndex:1,//tab索引
 				tabBars:[
 					{name:"关注",id:"guanzhu"},
 					{name:"话题",id:"huati"}
@@ -202,13 +223,60 @@
 			//ListView swiper切换,滑动切换
 			tabChange(e) {
 				this.tabIndex = e.detail.current
+			},
+			//关注上拉加载
+			loadmore() {
+				//上拉加载
+				if(this.guanzhu.loadtext !="上拉加载更多"){return}
+				//修改状态
+				this.guanzhu.loadtext="加载中..."
+				//获取数据
+				setTimeout(()=>{
+					let obj = {
+						userpic:"../../static/demo/userpic/12.jpg",
+						username:"哈哈",
+						sex:0, //0 男 1 女
+						age:25,
+						isguanzhu:false,
+						title:"我是标题",
+						titlepic:"../../static/demo/datapic/13.jpg",
+						video:false,
+						share:false,
+						path:"深圳 龙岗",
+						sharenum:20,
+						commentnum:30,
+						goodnum:20
+					};
+					this.guanzhu.list.push(obj);
+					this.guanzhu.loadtext = "上拉加载更多";
+				},1000)
 			}
+		
 		}
 	}
 </script>
 
 <style lang="scss">
+.search-input {
+	padding: 20upx;
+	input {
+		background: #F4F4F4;
+		border-radius: 10upx;
+		padding: 10upx 0;
+	}
+	.topic-search {
+		display: flex;
+		justify-content: center;
+		font-size: 27upx;
+	}
+}
 
+.topic-swiper {
+	padding: 20upx;
+	image {
+		width: 100%;
+	}
+}
 	
 
 </style>

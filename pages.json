@@ -47,6 +47,8 @@
 			"path":"pages/news/news",
 			"style":{
 				"app-plus": {
+					//关闭反弹效果
+					"bounce":"none",
 					//隐藏滚动条
 					"scrollIndicator":"none",
 					//禁用原生导航

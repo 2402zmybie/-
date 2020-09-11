@@ -139,7 +139,10 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-nav-bar/uni-nav-bar */ "components/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/uni-nav-bar/uni-nav-bar.vue */ 23));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var newsNavBar = function newsNavBar() {__webpack_require__.e(/*! require.ensure | components/news/news-nav-bar */ "components/news/news-nav-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/news/news-nav-bar.vue */ 30));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var commonList = function commonList() {__webpack_require__.e(/*! require.ensure | components/common/common-list */ "components/common/common-list").then((function () {return resolve(__webpack_require__(/*! ../../components/common/common-list.vue */ 150));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-nav-bar/uni-nav-bar */ "components/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/uni-nav-bar/uni-nav-bar.vue */ 23));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var newsNavBar = function newsNavBar() {__webpack_require__.e(/*! require.ensure | components/news/news-nav-bar */ "components/news/news-nav-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/news/news-nav-bar.vue */ 30));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var commonList = function commonList() {__webpack_require__.e(/*! require.ensure | components/common/common-list */ "components/common/common-list").then((function () {return resolve(__webpack_require__(/*! ../../components/common/common-list.vue */ 150));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var loadMore = function loadMore() {__webpack_require__.e(/*! require.ensure | components/common/load-more */ "components/common/load-more").then((function () {return resolve(__webpack_require__(/*! ../../components/common/load-more.vue */ 96));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
 
 
 
@@ -178,7 +181,8 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     uniNavBar: uniNavBar,
     newsNavBar: newsNavBar,
-    commonList: commonList },
+    commonList: commonList,
+    loadMore: loadMore },
 
   onLoad: function onLoad() {var _this = this;
     //获取可用窗口的高度
@@ -343,6 +347,33 @@ __webpack_require__.r(__webpack_exports__);
     //ListView swiper切换,滑动切换
     tabChange: function tabChange(e) {
       this.tabIndex = e.detail.current;
+    },
+    //关注上拉加载
+    loadmore: function loadmore() {var _this2 = this;
+      //上拉加载
+      if (this.guanzhu.loadtext != "上拉加载更多") {return;}
+      //修改状态
+      this.guanzhu.loadtext = "加载中...";
+      //获取数据
+      setTimeout(function () {
+        var obj = {
+          userpic: "../../static/demo/userpic/12.jpg",
+          username: "哈哈",
+          sex: 0, //0 男 1 女
+          age: 25,
+          isguanzhu: false,
+          title: "我是标题",
+          titlepic: "../../static/demo/datapic/13.jpg",
+          video: false,
+          share: false,
+          path: "深圳 龙岗",
+          sharenum: 20,
+          commentnum: 30,
+          goodnum: 20 };
+
+        _this2.guanzhu.list.push(obj);
+        _this2.guanzhu.loadtext = "上拉加载更多";
+      }, 1000);
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
