@@ -139,7 +139,24 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-nav-bar/uni-nav-bar */ "components/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/uni-nav-bar/uni-nav-bar.vue */ 23));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var newsNavBar = function newsNavBar() {__webpack_require__.e(/*! require.ensure | components/news/news-nav-bar */ "components/news/news-nav-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/news/news-nav-bar.vue */ 30));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var commonList = function commonList() {__webpack_require__.e(/*! require.ensure | components/common/common-list */ "components/common/common-list").then((function () {return resolve(__webpack_require__(/*! ../../components/common/common-list.vue */ 150));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-nav-bar/uni-nav-bar */ "components/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/uni-nav-bar/uni-nav-bar.vue */ 23));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var newsNavBar = function newsNavBar() {__webpack_require__.e(/*! require.ensure | components/news/news-nav-bar */ "components/news/news-nav-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/news/news-nav-bar.vue */ 30));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var commonList = function commonList() {__webpack_require__.e(/*! require.ensure | components/common/common-list */ "components/common/common-list").then((function () {return resolve(__webpack_require__(/*! ../../components/common/common-list.vue */ 150));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -163,10 +180,21 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     newsNavBar: newsNavBar,
     commonList: commonList },
 
+  onLoad: function onLoad() {var _this = this;
+    //获取可用窗口的高度
+    uni.getSystemInfo({
+      success: function success(res) {
+        //获取下方滑动的ListView容器的高度
+        var height = res.windowHeight - uni.upx2px(100);
+        console.log(height);
+        _this.swiperheight = height;
+      } });
+
+  },
   data: function data() {
     return {
       swiperheight: 500, //屏幕高度
-      tabIndex: 1, //tab索引
+      tabIndex: 0, //tab索引
       tabBars: [
       { name: "关注", id: "guanzhu" },
       { name: "话题", id: "huati" }],
@@ -308,9 +336,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
   },
   methods: {
+    //点击切换
     changeTap: function changeTap(index) {
       this.tabIndex = index;
+    },
+    //ListView swiper切换,滑动切换
+    tabChange: function tabChange(e) {
+      this.tabIndex = e.detail.current;
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 ],[[17,"common/runtime","common/vendor"]]]);
