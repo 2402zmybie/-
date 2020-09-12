@@ -26,17 +26,27 @@
 						</view>
 						<!-- 轮播图 -->
 						<swiper class="topic-swiper" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
-							<swiper-item>
-								<image src="../../static/demo/banner2.jpg" mode="widthFix" lazy-load></image>
-							</swiper-item>
-							<swiper-item>
-								<image src="../../static/demo/banner2.jpg" mode="widthFix" lazy-load></image>
-							</swiper-item>
-							<swiper-item>
-								<image src="../../static/demo/banner2.jpg" mode="widthFix" lazy-load></image>
+							<swiper-item v-for="(item,index) in topic.swiper" :key="index">
+								<image :src="item.src" mode="aspectFill" lazy-load></image>
 							</swiper-item>
 						</swiper>
 						<!-- 热门分类 -->
+						<view class="topic-nav">
+							<view class="u-f-ac u-f-jsb">
+								<view>热门分类</view>
+								<view class="u-f-ac">
+									更多<view class="icon iconfont icon-jinru"></view>
+								</view>
+							</view>
+							<view class="u-f-ac">
+								<view class="u-f-ajc">最新</view>
+								<view class="u-f-ajc">游戏</view>
+								<view class="u-f-ajc">打开</view>
+								<view class="u-f-ajc">情感</view>
+								<view class="u-f-ajc">故事</view>
+								<view class="u-f-ajc">喜爱</view>
+							</view>
+						</view>
 						<!-- 最近更新 -->
 					</scroll-view>
 				</swiper-item>
@@ -270,13 +280,41 @@
 		font-size: 27upx;
 	}
 }
-
+// 轮播图
 .topic-swiper {
 	padding: 20upx;
 	image {
 		width: 100%;
+		border-radius: 10upx;
 	}
 }
+
+// 热门分类 注意scss的写法
+.topic-nav {
+	border-bottom: 1upx solid #EEEEEE;
+	border-top: 1upx solid #EEEEEE;
+	padding: 20upx;
+	>view:nth-child(1){
+		margin-bottom: 10upx;
+		>view:nth-child(1) {
+			color: #333333;
+			font-size: 32upx;
+		}
+		>view:nth-child(2) {
+			color: #9E9E9E;
+		}
+	}
+	>view:nth-child(2) {
+		view{
+			flex: 1;
+			background: #EEEEEE;
+			color: #9E9E9E;
+			border-radius: 10upx;
+			margin: 0 10upx;
+		}
+	}
+}
+
 	
 
 </style>
