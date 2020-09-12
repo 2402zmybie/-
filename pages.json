@@ -77,7 +77,25 @@
 				}
 			}
 		},
-		
+		{
+		    "path" : "pages/topic-detail/topic-detail",
+		    "style" : {
+				"app-plus": {
+					//隐藏滚动条
+					"scrollIndicator":"none",
+					"bounce":"none",
+					"titleNView": {
+						//顶部透明沉浸式状态栏
+						"type":"transparent",
+						"buttons":[
+							{
+								"type":"menu"
+							}
+						]
+					}
+				}
+			}
+		},
 		
 		
 		// demo示例
@@ -133,6 +151,7 @@
 				}
 			}
         }
+        
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

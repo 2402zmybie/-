@@ -36,7 +36,7 @@
 						<view class="topic-new">
 							<view>最近更新</view>
 							<block v-for="(item,index) in topic.list" :key="index">
-								<topic-list :item="item" ></topic-list>
+								<topic-list :item="item" @openDetail="openDetail(index)"></topic-list>
 							</block>
 						</view>
 					</scroll-view>
@@ -224,6 +224,12 @@
 			}
 		},
 		methods: {
+			openDetail(index)  {
+				console.log("话题详情" + index)
+				uni.navigateTo({
+					url: '../topic-detail/topic-detail'
+				});
+			},
 			openTopicNav() {
 				uni.navigateTo({
 					url: '../topic-nav/topic-nav'

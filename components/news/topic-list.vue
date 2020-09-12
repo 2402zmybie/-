@@ -1,5 +1,5 @@
 <template>
-	<view class="topic-list u-f">
+	<view class="topic-list u-f" @tap="openDetail">
 		<image :src="item.titlepic" mode="widthFix" lazy-load></image>
 		<view>
 			<view>#{{ item.title }}#</view>
@@ -13,6 +13,11 @@
 	export default {
 		props:{
 			item:Object
+		},
+		methods:{
+			openDetail() {
+				this.$emit("openDetail")
+			}
 		}
 	}
 </script>
