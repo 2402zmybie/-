@@ -31,22 +31,7 @@
 							</swiper-item>
 						</swiper>
 						<!-- 热门分类 -->
-						<view class="topic-nav">
-							<view class="u-f-ac u-f-jsb">
-								<view>热门分类</view>
-								<view class="u-f-ac">
-									更多<view class="icon iconfont icon-jinru"></view>
-								</view>
-							</view>
-							<view class="u-f-ac">
-								<view class="u-f-ajc">最新</view>
-								<view class="u-f-ajc">游戏</view>
-								<view class="u-f-ajc">打开</view>
-								<view class="u-f-ajc">情感</view>
-								<view class="u-f-ajc">故事</view>
-								<view class="u-f-ajc">喜爱</view>
-							</view>
-						</view>
+						<topic-nav :navs="topic.nav"></topic-nav>
 						<!-- 最近更新 -->
 					</scroll-view>
 				</swiper-item>
@@ -60,15 +45,19 @@
 	import uniNavBar from "../../components/uni-nav-bar/uni-nav-bar.vue"
 	//头部导航
 	import newsNavBar from "../../components/news/news-nav-bar.vue"
-	//话题列表
+	//关注列表
 	import commonList from '../../components/common/common-list.vue'
+	//加载更多
 	import loadMore from '../../components/common/load-more.vue'
+	//话题--热门分类
+	import topicNav from '../../components/news/topic-nav.vue'
 	export default {
 		components:{
 			uniNavBar,
 			newsNavBar,
 			commonList,
-			loadMore
+			loadMore,
+			topicNav
 		},
 		onLoad() {
 			//获取可用窗口的高度
@@ -286,32 +275,6 @@
 	image {
 		width: 100%;
 		border-radius: 10upx;
-	}
-}
-
-// 热门分类 注意scss的写法
-.topic-nav {
-	border-bottom: 1upx solid #EEEEEE;
-	border-top: 1upx solid #EEEEEE;
-	padding: 20upx;
-	>view:nth-child(1){
-		margin-bottom: 10upx;
-		>view:nth-child(1) {
-			color: #333333;
-			font-size: 32upx;
-		}
-		>view:nth-child(2) {
-			color: #9E9E9E;
-		}
-	}
-	>view:nth-child(2) {
-		view{
-			flex: 1;
-			background: #EEEEEE;
-			color: #9E9E9E;
-			border-radius: 10upx;
-			margin: 0 10upx;
-		}
 	}
 }
 
