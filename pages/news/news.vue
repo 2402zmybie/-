@@ -31,12 +31,12 @@
 							</swiper-item>
 						</swiper>
 						<!-- 热门分类 -->
-						<topic-nav :navs="topic.nav"></topic-nav>
+						<topic-nav :navs="topic.nav" @openTopicNav="openTopicNav"></topic-nav>
 						<!-- 最近更新 -->
 						<view class="topic-new">
 							<view>最近更新</view>
 							<block v-for="(item,index) in topic.list" :key="index">
-								<topic-list :item="item"></topic-list>
+								<topic-list :item="item" ></topic-list>
 							</block>
 						</view>
 					</scroll-view>
@@ -224,6 +224,11 @@
 			}
 		},
 		methods: {
+			openTopicNav() {
+				uni.navigateTo({
+					url: '../topic-nav/topic-nav'
+				});
+			},
 			//点击切换
 			changeTap(index) {
 				this.tabIndex = index;
