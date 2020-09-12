@@ -33,6 +33,12 @@
 						<!-- 热门分类 -->
 						<topic-nav :navs="topic.nav"></topic-nav>
 						<!-- 最近更新 -->
+						<view class="topic-new">
+							<view>最近更新</view>
+							<block v-for="(item,index) in topic.list" :key="index">
+								<topic-list :item="item"></topic-list>
+							</block>
+						</view>
 					</scroll-view>
 				</swiper-item>
 			</swiper>
@@ -51,13 +57,16 @@
 	import loadMore from '../../components/common/load-more.vue'
 	//话题--热门分类
 	import topicNav from '../../components/news/topic-nav.vue'
+	//话题--列表项
+	import topicList from '../../components/news/topic-list.vue'
 	export default {
 		components:{
 			uniNavBar,
 			newsNavBar,
 			commonList,
 			loadMore,
-			topicNav
+			topicNav,
+			topicList
 		},
 		onLoad() {
 			//获取可用窗口的高度
@@ -277,6 +286,17 @@
 		border-radius: 10upx;
 	}
 }
+
+
+//话题列表
+.topic-new {
+	padding: 20upx;
+	>view:first-child {
+		padding-bottom: 5upx;
+		font-size: 32upx;
+	}
+}
+
 
 	
 
