@@ -4556,7 +4556,8 @@ var render = function() {
                           attrs: { _i: "7-" + $30 + "-" + $31 }
                         })
                       ]
-                    })
+                    }),
+                    _c("load-more", { attrs: { _i: "8-" + $30 } })
                   ]
                 : _vm._e()
             ]
@@ -4601,7 +4602,8 @@ __webpack_require__.r(__webpack_exports__);
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 var _topicInfo = _interopRequireDefault(__webpack_require__(/*! ../../components/topic/topic-info.vue */ 130));
 var _swiperTabHead = _interopRequireDefault(__webpack_require__(/*! ../../components/index/swiper-tab-head.vue */ 19));
-var _commonList = _interopRequireDefault(__webpack_require__(/*! ../../components/common/common-list.vue */ 80));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+var _commonList = _interopRequireDefault(__webpack_require__(/*! ../../components/common/common-list.vue */ 80));
+var _loadMore = _interopRequireDefault(__webpack_require__(/*! ../../components/common/load-more.vue */ 27));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
 
   data: function data() {
@@ -4612,7 +4614,8 @@ var _commonList = _interopRequireDefault(__webpack_require__(/*! ../../component
   components: {
     'topicInfo': _topicInfo.default,
     'swiperTabHead': _swiperTabHead.default,
-    'commonList': _commonList.default } };exports.default = _default;
+    'commonList': _commonList.default,
+    'loadMore': _loadMore.default } };exports.default = _default;
 
 /***/ }),
 /* 130 */

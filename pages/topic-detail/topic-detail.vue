@@ -19,6 +19,7 @@
 						<common-list :item="itemlist" :index="itemIndex"></common-list>
 					</block>
 					<!-- 上拉加载 -->
+					<load-more :loadtext="item.loadtext"></load-more>
 				</template>
 			</block>
 		</view>
@@ -29,11 +30,13 @@
 	import topicInfo from '../../components/topic/topic-info.vue'
 	import swiperTabHead from '../../components/index/swiper-tab-head.vue'
 	import commonList from '../../components/common/common-list.vue'
+	import loadMore from '../../components/common/load-more.vue'
 	export default {
 		components:{
 			topicInfo,
 			swiperTabHead,
-			commonList
+			commonList,
+			loadMore
 		},
 		data() {
 			return {
@@ -169,6 +172,38 @@
 			tabtap(index) {
 				this.tabIndex = index
 			},
+			loadmore(){
+				//上拉加载
+				if(this.tablist[this.tabIndex].loadtext !="上拉加载更多"){return}
+				//修改状态
+				this.tablist[this.tabIndex].loadtext="加载中..."
+				//获取数据
+				setTimeout(()=>{
+					let obj = {
+						userpic:"../../static/demo/userpic/16.jpg",
+						username:"哈哈",
+						sex:1, //0 男 1 女
+						age:22,
+						isguanzhu:false,
+						title:"上拉加载",
+						titlepic:"../../static/demo/datapic/15.jpg",
+						video:false,
+						share:false,
+						path:"深圳 龙岗",
+						sharenum:20,
+						commentnum:30,
+						goodnum:20
+					};
+					this.tablist[this.tabIndex].list.push(obj);
+					this.tablist[this.tabIndex].loadtext = "上拉加载更多";
+				},1000)
+				
+			}
+			
+		},
+		//页面触底, 上拉加载的逻辑
+		onReachBottom() {
+			this.loadmore()
 		}
 	}
 </script>
