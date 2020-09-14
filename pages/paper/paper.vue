@@ -4,16 +4,18 @@
 		<block v-for="(item,index) in list" :key="index">
 			<paper-list :item="item"></paper-list>
 		</block>
-		
+		<load-more :loadtext="loadtext"></load-more>
 		
 	</view>
 </template>
 
 <script>
 	import paperList from '../../components/paper/paper-list.vue'
+	import loadMore from '../../components/common/load-more.vue'
 	export default {
 		components:{
-			paperList
+			paperList,
+			loadMore
 		},
 		data() {
 			return {
@@ -82,6 +84,10 @@
 		onPullDownRefresh() {
 			this.getData()
 		},
+		//页面触底 上拉加载
+		onReachBottom() {
+			this.loadMore()
+		},
 		methods: {
 			getData() {
 				setTimeout(() => {
@@ -147,6 +153,23 @@
 					uni.stopPullDownRefresh()
 					
 				}, 2000);
+			},
+			loadMore() {
+				if(this.loadtext !="上拉加载更多"){return}
+				//修改状态
+				this.loadtext="加载中..."
+				//获取数据
+				setTimeout(()=>{
+					let obj = {
+							userpic:"../../static/demo/userpic/11.jpg",
+							username:"昵称111",
+							time:"10:21",
+							data:"我是信息111",
+							noreadnum:2
+					};
+					this.list.push(obj);
+					this.loadtext = "上拉加载更多";
+				},1000)
 			}
 		},
 		

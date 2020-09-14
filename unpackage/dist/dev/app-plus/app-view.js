@@ -4022,7 +4022,8 @@ var render = function() {
         return [
           _c("paper-list", { key: item["k0"], attrs: { _i: "2-" + $30 } })
         ]
-      })
+      }),
+      _c("load-more", { attrs: { _i: 3 } })
     ],
     2
   )
@@ -4248,7 +4249,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-var _paperList = _interopRequireDefault(__webpack_require__(/*! ../../components/paper/paper-list.vue */ 197));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+var _paperList = _interopRequireDefault(__webpack_require__(/*! ../../components/paper/paper-list.vue */ 197));
+var _loadMore = _interopRequireDefault(__webpack_require__(/*! ../../components/common/load-more.vue */ 27));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
 
   data: function data() {
@@ -4257,7 +4259,8 @@ var _paperList = _interopRequireDefault(__webpack_require__(/*! ../../components
 
   },
   components: {
-    'paperList': _paperList.default } };exports.default = _default;
+    'paperList': _paperList.default,
+    'loadMore': _loadMore.default } };exports.default = _default;
 
 /***/ }),
 /* 120 */
