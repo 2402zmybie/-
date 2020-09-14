@@ -80,6 +80,8 @@
 		{
 		    "path" : "pages/topic-detail/topic-detail",
 		    "style" : {
+				//开启下拉刷新
+				"enablePullDownRefresh":true,
 				"app-plus": {
 					//隐藏滚动条
 					"scrollIndicator":"none",

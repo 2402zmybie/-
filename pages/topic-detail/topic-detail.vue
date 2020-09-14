@@ -168,6 +168,10 @@
 				]
 			}
 		},
+		//监听下拉刷新
+		onPullDownRefresh() {
+			this.getData()
+		},
 		methods: {
 			tabtap(index) {
 				this.tabIndex = index
@@ -198,8 +202,34 @@
 					this.tablist[this.tabIndex].loadtext = "上拉加载更多";
 				},1000)
 				
+			},
+			//下拉刷新
+			getData() {
+				//获取数据
+				//关闭下拉刷新
+				setTimeout(()=> {
+					let arr = [
+						{
+							userpic:"../../static/demo/userpic/8.jpg",
+							username:"刷新",
+							sex:0, //0 男 1 女
+							age:20,
+							isguanzhu:false,
+							title:"我是刷新",
+							titlepic:"",
+							video:false,
+							share:false,
+							path:"深圳 龙岗",
+							sharenum:20,
+							commentnum:30,
+							goodnum:20
+						}
+					];
+					//赋值
+					this.tablist[this.tabIndex].list = arr
+					uni.stopPullDownRefresh();
+				}, 2000);
 			}
-			
 		},
 		//页面触底, 上拉加载的逻辑
 		onReachBottom() {
