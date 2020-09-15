@@ -5492,7 +5492,36 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "view",
-    [_c("user-chat-bottom", { attrs: { _i: 1 }, on: { submit: _vm.submit } })],
+    [
+      _c(
+        "view",
+        {
+          staticClass: _vm._$s(1, "sc", "user-chat-list u-f"),
+          attrs: { _i: 1 }
+        },
+        [
+          _c("image", {
+            attrs: {
+              src: _vm._$s(
+                2,
+                "a-src",
+                __webpack_require__(/*! ../../static/demo/userpic/1.jpg */ 174)
+              ),
+              _i: 2
+            }
+          }),
+          _c(
+            "view",
+            {
+              staticClass: _vm._$s(3, "sc", "user-chat-list-body"),
+              attrs: { _i: 3 }
+            },
+            [_c("text")]
+          )
+        ]
+      ),
+      _c("user-chat-bottom", { attrs: { _i: 5 }, on: { submit: _vm.submit } })
+    ],
     1
   )
 }
@@ -5522,7 +5551,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _F_H
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function(__f__) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\nvar _userChatBottom = _interopRequireDefault(__webpack_require__(/*! ../../components/user-chat/user-chat-bottom.vue */ 169));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //\n//\n//\n//\n//\n//\n//\nvar _default = { components: { userChatBottom: _userChatBottom.default }, data: function data() {return {};\n\n  },\n  methods: {\n    submit: function submit(input) {\n      __f__(\"log\", input, \" at pages/user-chat/user-chat.vue:21\");\n    } } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/lib/format-log.js */ 7)[\"default\"]))//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvdXNlci1jaGF0L3VzZXItY2hhdC52dWUiXSwibmFtZXMiOlsiY29tcG9uZW50cyIsInVzZXJDaGF0Qm90dG9tIiwiZGF0YSIsIm1ldGhvZHMiLCJzdWJtaXQiLCJpbnB1dCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFRQSw4SCw4RkFSQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtlQUdlLEVBQ2RBLFVBQVUsRUFBQyxFQUNWQyxjQUFjLEVBQWRBLHVCQURVLEVBREcsRUFJZEMsSUFKYyxrQkFJUCxDQUNOLE9BQU8sRUFBUDs7QUFHQSxHQVJhO0FBU2RDLFNBQU8sRUFBRTtBQUNSQyxVQURRLGtCQUNEQyxLQURDLEVBQ007QUFDYixtQkFBWUEsS0FBWjtBQUNBLEtBSE8sRUFUSyxFIiwiZmlsZSI6IjE2OC5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG5cbmltcG9ydCB1c2VyQ2hhdEJvdHRvbSBmcm9tICcuLi8uLi9jb21wb25lbnRzL3VzZXItY2hhdC91c2VyLWNoYXQtYm90dG9tLnZ1ZSdcbmV4cG9ydCBkZWZhdWx0IHtcblx0Y29tcG9uZW50czp7XG5cdFx0dXNlckNoYXRCb3R0b21cblx0fSxcblx0ZGF0YSgpIHtcblx0XHRyZXR1cm4ge1xuXHRcdFx0XG5cdFx0fVxuXHR9LFxuXHRtZXRob2RzOiB7XG5cdFx0c3VibWl0KGlucHV0KSB7XG5cdFx0XHRjb25zb2xlLmxvZyhpbnB1dClcblx0XHR9XG5cdH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///168\n");
+eval("/* WEBPACK VAR INJECTION */(function(__f__) {Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nvar _userChatBottom = _interopRequireDefault(__webpack_require__(/*! ../../components/user-chat/user-chat-bottom.vue */ 169));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\nvar _default = { components: { userChatBottom: _userChatBottom.default }, data: function data() {return {};}, methods: { submit: function submit(input) {__f__(\"log\", input, \" at pages/user-chat/user-chat.vue:29\");} } };exports.default = _default;\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/lib/format-log.js */ 7)[\"default\"]))//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvdXNlci1jaGF0L3VzZXItY2hhdC52dWUiXSwibmFtZXMiOlsiY29tcG9uZW50cyIsInVzZXJDaGF0Qm90dG9tIiwiZGF0YSIsIm1ldGhvZHMiLCJzdWJtaXQiLCJpbnB1dCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7OztBQWdCQSw4SCw4RkFoQkE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO2VBR2UsRUFDZEEsVUFBVSxFQUFDLEVBQ1ZDLGNBQWMsRUFBZEEsdUJBRFUsRUFERyxFQUlkQyxJQUpjLGtCQUlQLENBQ04sT0FBTyxFQUFQLENBR0EsQ0FSYSxFQVNkQyxPQUFPLEVBQUUsRUFDUkMsTUFEUSxrQkFDREMsS0FEQyxFQUNNLENBQ2IsYUFBWUEsS0FBWiwwQ0FDQSxDQUhPLEVBVEssRSIsImZpbGUiOiIxNjguanMiLCJzb3VyY2VzQ29udGVudCI6WyIvL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG4vL1xuLy9cbi8vXG5cbmltcG9ydCB1c2VyQ2hhdEJvdHRvbSBmcm9tICcuLi8uLi9jb21wb25lbnRzL3VzZXItY2hhdC91c2VyLWNoYXQtYm90dG9tLnZ1ZSdcbmV4cG9ydCBkZWZhdWx0IHtcblx0Y29tcG9uZW50czp7XG5cdFx0dXNlckNoYXRCb3R0b21cblx0fSxcblx0ZGF0YSgpIHtcblx0XHRyZXR1cm4ge1xuXHRcdFx0XG5cdFx0fVxuXHR9LFxuXHRtZXRob2RzOiB7XG5cdFx0c3VibWl0KGlucHV0KSB7XG5cdFx0XHRjb25zb2xlLmxvZyhpbnB1dClcblx0XHR9XG5cdH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///168\n");
 
 /***/ }),
 /* 169 */
@@ -5637,6 +5666,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _F_H
 
 "use strict";
 eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\nvar _default =\n{\n  data: function data() {\n    return {\n      text: \"\" };\n\n  },\n  methods: {\n    submit: function submit() {\n      this.$emit(\"submit\", this.text);\n      this.text = \"\";\n    } } };exports.default = _default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vY29tcG9uZW50cy91c2VyLWNoYXQvdXNlci1jaGF0LWJvdHRvbS52dWUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFRQTtBQUNBLE1BREEsa0JBQ0E7QUFDQTtBQUNBLGNBREE7O0FBR0EsR0FMQTtBQU1BO0FBQ0EsVUFEQSxvQkFDQTtBQUNBO0FBQ0E7QUFDQSxLQUpBLEVBTkEsRSIsImZpbGUiOiIxNzMuanMiLCJzb3VyY2VzQ29udGVudCI6WyI8dGVtcGxhdGU+XHJcblx0PHZpZXcgY2xhc3M9XCJ1c2VyLWNoYXQtYm90dG9tIHUtZi1hY1wiPlxyXG5cdFx0PGlucHV0IHR5cGU9XCJ0ZXh0XCIgcGxhY2Vob2xkZXI9XCLmlofmmI7lj5HoqIBcIiB2LW1vZGVsPVwidGV4dFwiLz5cclxuXHRcdDx2aWV3IGNsYXNzPVwiaWNvbiBpY29uZm9udCBpY29uLWZhYnUgdS1mLWFqY1wiIEB0YXA9XCJzdWJtaXRcIj48L3ZpZXc+XHJcblx0PC92aWV3PlxuPC90ZW1wbGF0ZT5cblxuPHNjcmlwdD5cclxuXHRleHBvcnQgZGVmYXVsdCB7XHJcblx0XHRkYXRhKCkge1xyXG5cdFx0XHRyZXR1cm4ge1xyXG5cdFx0XHRcdHRleHQ6IFwiXCJcclxuXHRcdFx0fVxyXG5cdFx0fSxcclxuXHRcdG1ldGhvZHM6e1xyXG5cdFx0XHRzdWJtaXQoKSB7XHJcblx0XHRcdFx0dGhpcy4kZW1pdChcInN1Ym1pdFwiLHRoaXMudGV4dClcclxuXHRcdFx0XHR0aGlzLnRleHQgPSBcIlwiXHJcblx0XHRcdH1cclxuXHRcdH1cclxuXHR9XG48L3NjcmlwdD5cblxuPHN0eWxlIGxhbmc9XCJzY3NzXCIgc2NvcGVkPlxyXG4udXNlci1jaGF0LWJvdHRvbSB7XHJcblx0cG9zaXRpb246IGZpeGVkO1xyXG5cdGxlZnQ6IDA7XHJcblx0Ym90dG9tOiAwO1xyXG5cdHJpZ2h0OiAwO1xyXG5cdGhlaWdodDogMTIwdXB4O1xyXG5cdC8vIOS4iuWPs+S4i+W3piwgIOS4iuS4i+aYrzDlt6blj7PmmK8yMHVweFxyXG5cdHBhZGRpbmc6IDAgMjB1cHg7XHJcblx0YmFja2dyb3VuZDogI0ZGRkZGRjtcclxuXHRib3JkZXItdG9wOiAxdXB4IHNvbGlkICNFRUVFRUU7XHJcblx0aW5wdXQge1xyXG5cdFx0ZmxleDogMTtcclxuXHRcdG1hcmdpbi1yaWdodDogMjB1cHg7XHJcblx0XHRwYWRkaW5nOiAxMHVweDtcclxuXHRcdGJvcmRlci1yYWRpdXM6IDEwdXB4O1xyXG5cdFx0YmFja2dyb3VuZDogI0ZGRkZGRjtcclxuXHR9XHJcblx0dmlldyB7XHJcblx0XHR3aWR0aDogODB1cHg7XHJcblx0XHRmb250LXNpemU6IDQ1dXB4O1xyXG5cdFx0XHJcblx0fVxyXG59XG48L3N0eWxlPlxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///173\n");
+
+/***/ }),
+/* 174 */
+/*!************************************************************!*\
+  !*** G:/AndroidCode/uni-app/仿糗百/static/demo/userpic/1.jpg ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"/static/demo/userpic/1.jpg\";//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbbnVsbF0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6IjE3NC5qcyIsInNvdXJjZXNDb250ZW50IjpbIm1vZHVsZS5leHBvcnRzID0gXCIvc3RhdGljL2RlbW8vdXNlcnBpYy8xLmpwZ1wiOyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///174\n");
 
 /***/ })
 ],[[0,"app-config"]]]);
