@@ -1,19 +1,12 @@
 <template>
 	<view class="body">
-		<!-- 操作菜单 -->
-		<view class="paper-left-popup-mask" v-show="show" @tap="hidepopup"></view>
-		<view class="paper-left-popup" v-show="show">
-			<view class="u-f-ac" hover-class="paper-left-popup-h" @tap="addfriend">
-				<view class="icon iconfont icon-sousuo"></view>
-				加糗友
-			</view>
-			<view style="height: 1px; background: #CCCCCC;"></view>
-			<view class="u-f-ac" hover-class="paper-left-popup-h" @tap="clear">
-				<view class="icon iconfont icon-qingchu"></view>
-				清除缓存
-			</view>
-		</view>
-		
+		<!-- popup弹出框 -->
+		<paper-left-popup
+		:show="show"
+		@hidepopup="hidepopup"
+		@addfriend="addfriend"
+		@clear="clear"
+		></paper-left-popup>
 		<!-- 小纸条列表 -->
 		<block v-for="(item,index) in list" :key="index">
 			<paper-list :item="item"></paper-list>
@@ -26,10 +19,12 @@
 <script>
 	import paperList from '../../components/paper/paper-list.vue'
 	import loadMore from '../../components/common/load-more.vue'
+	import paperLeftPopup from '../../components/paper/paper-left-popup.vue'
 	export default {
 		components:{
 			paperList,
-			loadMore
+			loadMore,
+			paperLeftPopup
 		},
 		data() {
 			return {
@@ -99,10 +94,12 @@
 		onNavigationBarButtonTap(e){
 			switch (e.index){
 				case 0:
+					console.log("点击了左边按钮")
+					this.hidepopup()
 				break;
 				case 1:
-				//点击+号
-				this.showpopup()
+					//点击+号
+					this.showpopup()
 				break;
 			}
 		},
@@ -115,11 +112,11 @@
 		},
 		methods: {
 			addfriend() {
-				console.log(111)
+				console.log("加糗友")
 				this.hidepopup()
 			},
 			clear() {
-				console.log(222)
+				console.log("清除缓存")
 				this.hidepopup()
 			},
 			hidepopup() {
@@ -220,34 +217,6 @@
 	padding: 0 20upx;
 }
 
-.paper-left-popup-mask {
-	position: fixed;
-	right: 0;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	z-index: 1999;
-	
-}
-.paper-left-popup {
-	position: fixed;
-	right: 0;
-	top: 10upx;
-	background: #FFFFFF;
-	z-index: 2000;
-	width: 55%;
-	box-shadow: 1upx 1upx 20upx #CCCCCC;
-	>view:nth-child(1), view:nth-child(3){
-		padding: 20upx;
-		font-size: 35upx;
-		>view {
-			margin-right: 10upx;
-			font-weight: bold;
-		}
-	}
-}
-.paper-left-popup-h {
-	background: #EEEEEE;
-}
+
 
 </style>
