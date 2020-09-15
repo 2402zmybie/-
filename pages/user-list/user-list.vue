@@ -169,7 +169,6 @@
 		methods:{
 			tabtap(index) {
 				this.tabIndex = index
-				console.log(index)
 			},
 			tabChange(e) {
 				this.tabIndex = e.detail.current
