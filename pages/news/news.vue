@@ -82,7 +82,7 @@
 		data() {
 			return {
 				swiperheight:500,//屏幕高度
-				tabIndex:1,//tab索引
+				tabIndex:0,//tab索引
 				tabBars:[
 					{name:"关注",id:"guanzhu"},
 					{name:"话题",id:"huati"}
